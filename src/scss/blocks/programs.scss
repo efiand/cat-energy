@@ -1,0 +1,150 @@
+.programs__list {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include tablet-desktop {
+    gap: 30px;
+  }
+
+  @include desktop {
+    gap: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 82px;
+  }
+}
+
+.programs__item {
+  position: relative;
+  padding: 20px 20px 18px;
+  background-color: #f2f2f2;
+
+  @include icons-for-modifiers(("cat-slim", "cat-pro"));
+
+  @include tablet {
+    min-height: 242px;
+    padding: 76px 320px 54px 52px;
+  }
+
+  @include desktop {
+    padding: 55px 52px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    width: 67px;
+    height: 53px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    @include tablet {
+      top: 83px;
+      right: 29px;
+      left: auto;
+      transform: scale(4);
+      transform-origin: 100% 0;
+    }
+
+    @include desktop {
+      top: 43px;
+      left: 35px;
+      transform: scale(2);
+      transform-origin: 0 0;
+    }
+  }
+}
+
+.programs__title {
+  @include oswald;
+
+  margin: 10px 0 29px 70px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+
+  @include tablet-desktop {
+    margin: 0 0 24px;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  @include desktop {
+    margin: 20px 0 74px 162px;
+  }
+}
+
+.programs__text {
+  margin: 0 0 15px;
+  padding-bottom: 22px;
+  color: #444444;
+  border-bottom: 1px solid #d9d9d9;
+
+  @include tablet-desktop {
+    margin-bottom: 48px;
+    padding: 0;
+    color: #000000;
+    border: none;
+  }
+
+  @include desktop {
+    margin-bottom: 24px;
+  }
+}
+
+.programs__link {
+  @include oswald;
+
+  position: relative;
+  display: table;
+  padding: 4px 47px 4px 0;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include tablet-desktop {
+    padding-right: 58px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &::after {
+    @include icon("arrow");
+
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 24px;
+    height: 10px;
+    background-position: 100% 50%;
+    background-size: 32px 12px;
+
+    @include motion {
+      transition: 0.3s ease-in-out;
+      transition-property: right, width;
+    }
+
+    @include tablet-desktop {
+      top: 14px;
+    }
+  }
+
+  &:hover,
+  &:active {
+    &::after {
+      right: 0;
+      width: 32px;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

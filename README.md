@@ -1,5 +1,7 @@
-# vite-boilerplate
+# cat-energy
 
-Базовая сборка для нативных и vue-проектов.
+Демо вёрстки интернет-магазина корма для кошек (идея и дизайн от HTML Academy).
 
-[Демо](https://github.com/efiand/cat-energy).
+[Опубликованная версия](https://efiand.github.io/cat-energy)
+
+[Сборка](https://github.com/efiand/vite-boilerplate).

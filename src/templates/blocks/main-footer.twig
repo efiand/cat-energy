@@ -1,0 +1,34 @@
+<footer class="main-footer">
+  {% include 'contacts.twig' with contacts %}
+
+  <div class="main-footer__container container">
+    <a class="main-footer__logo logo" href="index.html">
+      <img
+        class="logo__image"
+        src="images/logo-text.svg"
+        width="128"
+        height="24"
+        alt="logo"
+      >
+    </a>
+
+    {% include 'social.twig' with social %}
+
+    <a
+      class="main-footer__copyright copyright"
+      href="https://htmlacademy.ru/intensive/adaptive"
+    >
+      <span class="copyright__text">HTML Academy</span>
+
+      <svg
+        class="copyright__image"
+        width="27"
+        height="34"
+        role="img"
+        focusable="false"
+      >
+        <use href="images/logo-html.svg#logo" />
+      </svg>
+    </a>
+  </div>
+</footer>

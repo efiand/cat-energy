@@ -1,0 +1,9 @@
+{% extends 'src/templates/layout.twig' %}
+
+{% set page = 'programs' %}
+
+{% block main %}
+  {% include 'src/templates/blocks/page-header.twig' with pageHeader %}
+
+  {{ parent() }}
+{% endblock %}

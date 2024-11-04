@@ -1,6 +1,30 @@
-body {
-  margin: 0;
+/* GLOBAL */
+@import "common/mixin";
+@import "common/global";
 
-  // Вставляет иконку src/icons/search.svg в CSS
-  // --icon-search: url("../icons/search.svg");
-}
+/* BLOCKS */
+@import "blocks/additional-item";
+@import "blocks/additional-product";
+@import "blocks/advantages";
+@import "blocks/button";
+@import "blocks/catalog";
+@import "blocks/catalog-card";
+@import "blocks/contacts";
+@import "blocks/copyright";
+@import "blocks/example";
+@import "blocks/field";
+@import "blocks/firstscreen";
+@import "blocks/hero";
+@import "blocks/logo";
+@import "blocks/main-footer";
+@import "blocks/main-header";
+@import "blocks/map";
+@import "blocks/navigation";
+@import "blocks/page";
+@import "blocks/page-header";
+@import "blocks/programs";
+@import "blocks/social";
+@import "blocks/subscription";
+
+/* UTILS */
+@import "common/utils";

@@ -1,0 +1,35 @@
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  list-style: none;
+
+  @include mobile {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+  }
+}
+
+.social__link {
+  color: #666666;
+
+  &:hover,
+  &:focus {
+    color: #68b738;
+  }
+
+  &:active {
+    color: rgba(#68b738, 0.3);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 22px;
+    background-color: currentColor;
+  }
+
+  @include icons-for-modifiers(("vkontakte", "youtube", "telegram"), "mask");
+}

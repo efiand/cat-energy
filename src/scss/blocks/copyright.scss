@@ -1,0 +1,39 @@
+.copyright {
+  --logo-color: #666666;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  pointer-events: none;
+
+  @include mobile {
+    justify-content: space-between;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    --logo-color: #68b738;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__text {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #444444;
+  pointer-events: all;
+}
+
+.copyright__image {
+  fill: var(--logo-color);
+  pointer-events: all;
+
+  @include motion {
+    transition: fill 0.3s ease-in-out;
+  }
+}

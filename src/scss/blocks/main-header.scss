@@ -1,0 +1,30 @@
+.main-header {
+  position: relative;
+}
+
+.main-header__container {
+  display: grid;
+  align-items: center;
+  gap: 20px;
+  grid-template-columns: 33px 1fr 24px;
+  padding-block: 13px 14px;
+
+  @include tablet-desktop {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 25px;
+  }
+
+  @include desktop {
+    padding-block: 55px 30px;
+  }
+}
+
+.main-header__logo-text {
+  justify-self: center;
+  transform: translateX(-5px);
+
+  @include tablet-desktop {
+    display: none;
+  }
+}

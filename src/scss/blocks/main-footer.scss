@@ -1,0 +1,36 @@
+.main-footer {
+  background-color: #f2f2f2;
+}
+
+.main-footer__container {
+  display: grid;
+  gap: 20px;
+  padding-block: 40px;
+
+  @include tablet-desktop {
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 42px;
+  }
+
+  @include desktop {
+    padding-block: 54px;
+  }
+}
+
+.main-footer__logo {
+  @include mobile {
+    justify-self: center;
+  }
+}
+
+.main-footer__social {
+  margin: 0;
+}
+
+.main-footer__copyright {
+  @include tablet-desktop {
+    justify-self: end;
+  }
+}

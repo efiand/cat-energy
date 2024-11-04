@@ -1,0 +1,173 @@
+.catalog-card {
+  display: grid;
+  align-content: start;
+  gap: 17px 0;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px 20px 24px;
+  border-top: 1px solid #ebebeb;
+
+  @include tablet-desktop {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 35px 38px;
+    background-color: #f2f2f2;
+    border: 2px solid #f2f2f2;
+  }
+
+  @include desktop {
+    gap: 10px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+    @include tablet-desktop {
+      margin-top: -80px;
+    }
+  }
+}
+
+.catalog-card__title {
+  @include oswald;
+
+  margin: 0 42px 14px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #222222;
+
+  @include tablet-desktop {
+    margin: 6px 40px 12px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  @include desktop {
+    margin: 0 20px 19px;
+  }
+}
+
+.catalog-card__title-link {
+  text-decoration: none;
+}
+
+.catalog-card__list {
+  margin: 0;
+
+  @include tablet-desktop {
+    margin-bottom: 15px;
+  }
+
+  @include desktop {
+    margin-bottom: 22px;
+  }
+}
+
+.catalog-card__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include tablet-desktop {
+    padding: 6px 0 5px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+
+  @include desktop {
+    &:last-child {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.catalog-card__text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: #444444;
+
+  @include tablet-desktop {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.catalog-card__button {
+  grid-column: 1 / -1;
+
+  @include tablet-desktop {
+    margin-top: auto;
+  }
+}
+
+.catalog-card--alter {
+  position: relative;
+  gap: 0;
+  grid-template-columns: 1fr;
+  padding-top: 78px;
+  text-align: center;
+
+  @include tablet-desktop {
+    padding-top: 160px;
+    background-color: transparent;
+  }
+
+  @include desktop {
+    padding-top: 147px;
+  }
+
+  &::before {
+    @include icon("plus");
+
+    --size: 30px;
+
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: var(--size);
+    height: var(--size);
+    background-size: 60px 60px;
+    transform: translateX(-50%);
+
+    @include tablet-desktop {
+      --size: 60px;
+
+      top: 50px;
+    }
+  }
+
+  .catalog-card__title {
+    margin: 0 0 8px;
+
+    @include tablet-desktop {
+      margin: 0 40px 22px;
+    }
+
+    @include desktop {
+      margin: 0 0 15px;
+    }
+  }
+
+  .catalog-card__text {
+    @include tablet-desktop {
+      margin: 0 40px 22px;
+      line-height: 18px;
+    }
+
+    @include desktop {
+      margin: 0 0 26px;
+    }
+  }
+
+  .catalog-card__button {
+    margin-top: 21px;
+
+    @include tablet-desktop {
+      margin-top: auto;
+    }
+  }
+}

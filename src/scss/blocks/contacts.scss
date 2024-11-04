@@ -1,0 +1,67 @@
+.contacts {
+  &--alter {
+    background-color: #ffffff;
+  }
+
+  @include desktop {
+    position: relative;
+    min-height: 200px;
+    padding-block: 95px 105px;
+  }
+}
+
+.contacts__map {
+  @include desktop {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.contacts__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: 26px;
+
+  @include tablet-desktop {
+    justify-content: space-between;
+    gap: 20px 40px;
+    grid-template-columns: 160px 1fr;
+    padding: 60px 40px;
+  }
+
+  @include desktop {
+    position: relative;
+    z-index: 1;
+    gap: 19px 78px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 405px;
+    padding-inline: 80px;
+    background-color: #ffffff;
+  }
+}
+
+.contacts__title {
+  @include oswald;
+
+  grid-row: span 2;
+  margin: 0 16px 0 0;
+  font-size: 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #111111;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.contacts__text {
+  margin: 0;
+  line-height: 20px;
+  color: #444444;
+
+  @include tablet {
+    text-align: right;
+  }
+}

@@ -1,0 +1,32 @@
+.firstscreen {
+  position: relative;
+
+  @include desktop {
+    --color: #ffffff;
+    --active-border-color: currentColor;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    inset: 0 0 0 50%;
+    z-index: -1;
+
+    @include desktop {
+      content: "";
+    }
+  }
+
+  &::before {
+    background-color: #46454a;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 720px 694px;
+
+    @include background-image("cat-hero");
+  }
+
+  &::after {
+    background-color: rgba(#68b738, 0.85);
+  }
+}

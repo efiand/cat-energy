@@ -1,0 +1,70 @@
+.additional-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 20px;
+  padding: 13px 0 18px;
+  border-top: 1px solid #cdcdcd;
+
+  @include tablet {
+    border-right: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+  }
+
+  @include tablet-desktop {
+    display: grid;
+    gap: 11px 13px;
+    grid-template-columns: 1fr 1fr 80px;
+    padding: 26px 38px;
+  }
+
+  @include desktop {
+    align-items: center;
+    gap: 24px;
+    grid-template-columns: 1fr 220px 58px 244px;
+    padding: 15px 0 16px;
+  }
+}
+
+.additional-item__title {
+  @include oswald;
+
+  width: 100%;
+  margin: 0 0 13px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #222222;
+
+  @include tablet-desktop {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.additional-item__text {
+  margin: 0 0 15px;
+  font-size: 14px;
+  line-height: 1;
+  color: #444444;
+
+  @include tablet-desktop {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+  }
+
+  @include desktop {
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.additional-item__button {
+  width: 100%;
+
+  @include tablet {
+    grid-column: 1 / -1;
+  }
+}

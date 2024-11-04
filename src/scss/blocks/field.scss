@@ -1,0 +1,31 @@
+.field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #444444;
+  border: 1px solid #e7e7e7;
+  outline: none;
+
+  &:hover {
+    border-color: #cdcdcd;
+  }
+
+  &:focus,
+  &:user-invalid {
+    padding: 11px;
+    border: 2px solid;
+  }
+
+  &:user-invalid {
+    border-color: #ff8282;
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.page__main {
+  flex-grow: 1;
+  overflow-x: hidden;
+}

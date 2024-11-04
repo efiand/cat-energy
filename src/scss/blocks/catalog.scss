@@ -1,0 +1,25 @@
+.catalog__list {
+  margin: 0 -20px;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #ebebeb;
+
+  @include tablet-desktop {
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+    border: none;
+  }
+
+  @include desktop {
+    gap: 64px 80px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.catalog__card {
+  @include tablet-desktop {
+    margin-top: 80px;
+  }
+}

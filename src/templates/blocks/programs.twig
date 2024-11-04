@@ -1,0 +1,17 @@
+<section class="programs">
+  <div class="container">
+    <h2 class="visually-hidden">Программы</h2>
+
+    <ul class="programs__list">
+      {% for item in items %}
+        <li class="programs__item programs__item--{{ item.id }}">
+          <h3 class="programs__title">{{ item.title }}</h3>
+
+          <p class="programs__text">{{ item.text }}</p>
+
+          <a class="programs__link" href="!#">{{ item.linkText }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

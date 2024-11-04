@@ -1,0 +1,18 @@
+<section class="additional-product">
+  <div class="container additional-product__container">
+    <h2 class="additional-product__title">Дополнительные товары</h2>
+    <ul class="additional-product__list">
+      {% for item in items %}
+        <li class="additional-product__item additional-item">
+          <h3 class="additional-item__title">{{ item.name }}</h3>
+          <p class="additional-item__text">{{ item.box }}</p>
+          <p class="additional-item__text">{{ item.price }} ₽</p>
+          <a class="additional-item__button button" href="#!">Заказать</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="additional-product__promo-text">
+      Закажите все и&nbsp;получите чехол для кота в подарок!
+    </p>
+  </div>
+</section>

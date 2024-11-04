@@ -1,0 +1,21 @@
+.map {
+  background-color: #eaeaea;
+
+  img:not(.map__pin) {
+    display: block;
+    margin: 0 auto;
+
+    @include desktop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      max-width: 1440px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.map__pin {
+  max-width: none;
+}

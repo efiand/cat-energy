@@ -15,5 +15,6 @@ export default {
     },
   ],
   plugins: ["@destination/prettier-plugin-twig"],
+  printWidth: 80,
   quoteProps: "consistent",
 };

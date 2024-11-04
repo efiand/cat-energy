@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <title>{{ title|default('Cat Energy') }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <link rel="preload" href="fonts/lato-400-normal.woff2" as="font">
+    <link rel="preload" href="fonts/oswald-400-normal.woff2" as="font">
+
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+    <script src="/src/main.js" type="module"></script>
+    {% if isDev %}
+      <script src="/src/dev.js" type="module"></script>
+    {% endif %}
+  </head>
+
+  <body class="page">
+    {% block header %}
+      {% include 'blocks/main-header.twig' %}
+    {% endblock %}
+
+    <main class="page__main">
+      {% block main %}
+        <div class="page-header container">Страница в разработке</div>
+      {% endblock %}
+    </main>
+
+    {% include 'blocks/main-footer.twig' %}
+  </body>
+</html>

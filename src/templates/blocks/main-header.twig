@@ -1,0 +1,61 @@
+<header class="main-header">
+  <div class="main-header__container container">
+    <a class="main-header__logo logo" href="index.html">
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcset="images/logo-img-desktop.svg"
+          width="202"
+          height="59"
+        >
+        <source
+          media="(min-width: 768px)"
+          srcset="images/logo-img-tablet.svg"
+          width="174"
+          height="50"
+        >
+        <img
+          class="logo__image"
+          src="images/logo-img.svg"
+          width="33"
+          height="38"
+          alt="logo"
+        >
+      </picture>
+    </a>
+
+    <a
+      class="main-header__logo-text logo"
+      href="index.html"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <img
+        class="logo__image"
+        src="images/logo-text.svg"
+        width="101"
+        height="18"
+        alt="logo-text"
+      >
+    </a>
+
+    <nav class="main-header__navigation navigation navigation--no-js">
+      <button class="navigation__toggler" type="button">
+        <span class="visually-hidden">Переключить меню</span>
+      </button>
+
+      <ul class="navigation__list">
+        {% for item in menu %}
+          <li class="navigation__item">
+            <a
+              class="navigation__link {{ page == item.id ? 'navigation__link--current' }}"
+              href="{{ item.id }}.html"
+            >
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

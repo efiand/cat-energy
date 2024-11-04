@@ -1,0 +1,26 @@
+<li class="catalog-card {{ className }}">
+  <a href="#!">{% include '../common/picture.twig' with image %}</a>
+
+  <div class="catalog-card__content">
+    <h2 class="catalog-card__title">
+      <a class="catalog-card__title-link" href="#!">{{ name }}</a>
+    </h2>
+
+    <dl class="catalog-card__list">
+      <div class="catalog-card__item">
+        <dt class="catalog-card__text">Масса</dt>
+        <dd class="catalog-card__text">{{ weight }} г</dd>
+      </div>
+      <div class="catalog-card__item">
+        <dt class="catalog-card__text">Вкус</dt>
+        <dd class="catalog-card__text">{{ taste }}</dd>
+      </div>
+      <div class="catalog-card__item">
+        <dt class="catalog-card__text">Цена</dt>
+        <dd class="catalog-card__text">{{ price }} ₽</dd>
+      </div>
+    </dl>
+  </div>
+
+  <a class="catalog-card__button button" href="#!">Заказать</a>
+</li>

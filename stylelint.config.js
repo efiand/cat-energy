@@ -8,11 +8,6 @@ export default {
         "annotation-no-unknown": [true, { ignoreAnnotations: ["default"] }],
       },
     },
-    {
-      customSyntax: "postcss-html",
-      files: ["**/*.vue"],
-      rules: { "function-no-unknown": [true, { ignoreFunctions: ["v-bind"] }] },
-    },
   ],
   plugins: [`stylelint-order`],
   rules: {
@@ -37,6 +32,10 @@ export default {
     "color-function-notation": "legacy",
     "color-hex-length": "long",
     "custom-property-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      { ignoreShorthands: ["grid-template"] },
+    ],
     "font-family-name-quotes": "always-unless-keyword",
     "import-notation": "string",
     "media-feature-range-notation": "prefix",

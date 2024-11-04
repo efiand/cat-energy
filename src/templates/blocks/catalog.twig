@@ -1,0 +1,19 @@
+<section class="catalog">
+  {% include '../blocks/page-header.twig' with pageHeader %}
+
+  <div class="container">
+    <ul class="catalog__list">
+      {% for item in items %}
+        {% include 'catalog-card.twig' with item %}
+      {% endfor %}
+
+      <li class="catalog-card catalog-card--alter catalog__card">
+        <h2 class="catalog-card__title">Показать еще 100500 товаров</h2>
+        <p class="catalog-card__text">На самом деле вкусов гораздо больше!</p>
+        <a class="catalog-card__button button button--alter" href="#!">
+          Показать все
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

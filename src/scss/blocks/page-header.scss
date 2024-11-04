@@ -1,0 +1,38 @@
+.page-header {
+  @include oswald;
+
+  padding-block: 27px 40px;
+  border-top: 1px solid #d9d9d9;
+
+  @include tablet-desktop {
+    padding-block: 40px 84px;
+    border-top: none;
+  }
+
+  @include desktop {
+    padding-top: 45px;
+  }
+}
+
+.page-header__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+
+  @include tablet-desktop {
+    font-size: 60px;
+  }
+}
+
+.page-header__description {
+  margin: 37px 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}

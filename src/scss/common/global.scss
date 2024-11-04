@@ -1,0 +1,48 @@
+@include font-face("lato");
+@include font-face("oswald");
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  font-family: "Lato", sans-serif;
+
+  @each $icon
+    in (
+      "arrow",
+      "cat-pro",
+      "cat-slim",
+      "close",
+      "food",
+      "gift",
+      "leaf",
+      "menu",
+      "plus",
+      "powder",
+      "telegram",
+      "time",
+      "vkontakte",
+      "youtube"
+    )
+  {
+    --icon-#{$icon}: url("../icons/#{$icon}.svg");
+  }
+
+  @include tablet-desktop {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-skip-ink: none;
+
+  @include default-interaction;
+}

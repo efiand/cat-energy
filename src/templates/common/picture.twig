@@ -1,0 +1,29 @@
+<picture>
+  {% if desktopWidth %}
+    <source
+      media="(min-width: 1280px)"
+      srcset="images/{{ name }}-desktop@1x.webp 1x, images/{{ name }}-desktop@2x.webp 2x"
+      width="{{ desktopWidth }}"
+      height="{{ desktopHeight }}"
+    >
+  {% endif %}
+
+  {% if tabletWidth %}
+    <source
+      media="(min-width: 768px)"
+      srcset="images/{{ name }}-tablet@1x.webp 1x, images/{{ name }}-tablet@2x.webp 2x"
+      width="{{ tabletWidth }}"
+      height="{{ tabletHeight }}"
+    >
+  {% endif %}
+
+  <img
+    {{ className ? 'class="' ~ className ~ '"' }}
+    src="images/{{ name }}@1x.webp"
+    srcset="images/{{ name }}@2x.webp 2x"
+    alt="{{ alt }}"
+    width="{{ width }}"
+    height="{{ height }}"
+    {{ immediate ? '' : 'loading="lazy"' }}
+  >
+</picture>

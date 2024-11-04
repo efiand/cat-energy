@@ -1,0 +1,130 @@
+.hero {
+  padding-block: 0 20px;
+  text-align: center;
+
+  @include oswald;
+
+  @include tablet-desktop {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.hero__container {
+  img {
+    position: relative;
+    display: block;
+    margin: -135px auto 3px;
+    color: #ffffff;
+  }
+
+  @include tablet {
+    --container-space: 120px;
+  }
+
+  @include tablet-desktop {
+    display: flex;
+    flex-direction: column;
+    padding-block: 40px 0;
+
+    img {
+      z-index: -1;
+      max-width: calc(100% + 180px);
+      margin: -82px -90px 0;
+    }
+
+    picture {
+      order: 99;
+    }
+  }
+
+  @include desktop {
+    position: relative;
+    min-height: 380px;
+    padding-block: 80px 90px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 0;
+      margin: 0 0 0 114px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.hero__content {
+  position: relative;
+  margin-inline: -20px;
+  padding: 26px 20px 165px;
+  line-height: 1;
+  color: #ffffff;
+  background-color: rgba(#68b738, 0.85);
+
+  @include tablet {
+    display: contents;
+  }
+
+  @include tablet-desktop {
+    color: #000000;
+    background-color: transparent;
+  }
+
+  @include desktop {
+    max-width: calc(50% - 180px);
+    padding: 0 100px 2px;
+  }
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #46454a;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 320px 322px;
+
+    @include background-image("cat-hero");
+
+    @include mobile {
+      content: "";
+    }
+  }
+}
+
+.hero__title {
+  margin: 0 0 25px;
+  font-weight: 400;
+  font-size: 36px;
+
+  @include tablet-desktop {
+    margin-bottom: 40px;
+    font-size: 60px;
+  }
+}
+
+.hero__text {
+  margin: 0;
+  text-transform: uppercase;
+
+  @include tablet-desktop {
+    font-size: 20px;
+  }
+}
+
+.hero__button {
+  width: 100%;
+  margin: 0;
+
+  @include tablet-desktop {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 50px;
+  }
+
+  @include desktop {
+    max-width: 430px;
+    margin-left: 80px;
+  }
+}

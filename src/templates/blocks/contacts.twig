@@ -1,0 +1,22 @@
+<section class="contacts {{ alter ? 'contacts--alter' }}">
+  <div class="container">
+    <div class="contacts__body">
+      <h2 class="visually-hidden">Наши контакты</h2>
+      <p class="contacts__title">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
+      <p class="contacts__text">
+        ул. Большая
+        <br>
+        Конюшенная, д.&nbsp;19/8
+      </p>
+      <p class="contacts__text">Санкт-Петербург</p>
+    </div>
+  </div>
+
+  <div class="contacts__map map">
+    <template>
+      {% include '../common/picture.twig' with pin %}
+    </template>
+
+    {% include '../common/picture.twig' with map %}
+  </div>
+</section>

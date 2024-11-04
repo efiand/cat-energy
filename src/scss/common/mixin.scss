@@ -1,0 +1,181 @@
+@mixin font-face($family, $weight: 400, $style: normal) {
+  @font-face {
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $family;
+    font-display: swap;
+    src: url("/fonts/#{$family}-#{$weight}-#{$style}.woff2") format("woff2");
+  }
+}
+
+@mixin title {
+  @include oswald;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+
+  @include tablet-desktop {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
+@mixin subtitle {
+  @include oswald;
+
+  position: relative;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -100vw;
+    left: -100vw;
+    z-index: -2;
+    height: 2px;
+    background-color: #68b738;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 -40px;
+    z-index: -1;
+    background-color: #ffffff;
+  }
+
+  @include tablet-desktop {
+    padding-inline: 40px;
+    font-size: 32px;
+
+    &::before {
+      top: 14px;
+    }
+
+    &::after {
+      inset: 0;
+    }
+  }
+
+  @include desktop {
+    padding: 0;
+    font-size: 40px;
+
+    &::before {
+      top: 18px;
+    }
+
+    &::after {
+      inset: 0 -40px;
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin button {
+  font: inherit;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+@mixin oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+@mixin background-image($name, $index: 1) {
+  background-image: url("/images/#{$name}@#{$index}x.webp");
+
+  @include tablet-desktop() {
+    background-image: url("/images/#{$name}-tablet@#{$index}x.webp");
+  }
+
+  @include desktop() {
+    background-image: url("/images/#{$name}-desktop@#{$index}x.webp");
+  }
+
+  @if $index == 1 {
+    @include retina() {
+      @include background-image($name, $index: 2);
+    }
+  }
+}
+
+@mixin icon($icon, $type: "background") {
+  $value: var(--icon-#{$icon});
+
+  @if $type == "mask" {
+    mask-image: $value;
+  } @else {
+    background-image: $value;
+  }
+}
+
+@mixin icons-for-modifiers($modifiers, $mode: "background") {
+  @each $modifier in $modifiers {
+    &--#{$modifier}::before {
+      @include icon($modifier, $mode);
+    }
+  }
+}
+
+@mixin motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin default-interaction {
+  @include motion {
+    transition: 0.3s ease-in-out;
+    transition-property: color, background-color, border-color, opacity,
+      box-shadow;
+  }
+}

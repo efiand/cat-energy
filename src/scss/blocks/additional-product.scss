@@ -1,0 +1,91 @@
+.additional-product {
+  padding-top: 24px;
+
+  @include tablet-desktop {
+    padding-top: 74px;
+  }
+
+  @include desktop {
+    padding-top: 70px;
+  }
+}
+
+.additional-product__container {
+  @include desktop {
+    display: grid;
+    align-items: start;
+    gap: 80px;
+    grid-template-columns: 1fr 245px;
+  }
+}
+
+.additional-product__title {
+  @include subtitle;
+
+  margin: 0 0 35px;
+
+  @include tablet-desktop {
+    margin-bottom: 80px;
+  }
+
+  @include desktop {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+}
+
+.additional-product__list {
+  margin: 0 0 35px;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #cdcdcd;
+
+  @include tablet-desktop {
+    margin-bottom: 70px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+
+.additional-product__promo-text {
+  position: relative;
+  margin: 0;
+  padding: 186px 50px 44px;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #ffffff;
+  background-color: #68b738;
+  background-position: center;
+  background-size: cover;
+
+  @include background-image("cat-in-case");
+
+  @include tablet {
+    padding: 70px 105px 70px 420px;
+    text-align: left;
+  }
+
+  @include desktop {
+    padding-inline: 40px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 58px;
+    left: 50%;
+    width: 78px;
+    height: 81px;
+    transform: translateX(-50%);
+
+    @include icon("gift");
+
+    @include tablet {
+      left: 78px;
+      transform: none;
+    }
+  }
+}

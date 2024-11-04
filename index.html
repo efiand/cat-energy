@@ -1,16 +1,14 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/scss/main.scss">
-    <script src="src/main.js" type="module"></script>
-    {% if isDev %}
-      <script src="/src/dev.js" type="module"></script>
-    {% endif %}
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-</html>
+{% extends 'src/templates/layout.twig' %}
+
+{% block header %}
+  <div class="firstscreen">
+    {% include 'src/templates/blocks/main-header.twig' %}
+    {% include 'src/templates/blocks/hero.twig' with hero %}
+  </div>
+{% endblock %}
+
+{% block main %}
+  {% include 'src/templates/blocks/programs.twig' with programs %}
+  {% include 'src/templates/blocks/advantages.twig' with advantages %}
+  {% include 'src/templates/blocks/example.twig' with example %}
+{% endblock %}
