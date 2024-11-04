@@ -98,6 +98,7 @@
     .navigation__toggler {
       @include icon("close");
 
+      background-repeat: no-repeat;
       background-position: 100% 50%;
       background-size: 18px;
     }
