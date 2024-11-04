@@ -191,10 +191,7 @@
   }
 }
 
-.example__pictures {
-  --value: var(--position, 50%);
-
-  position: relative;
+.example__comparator {
   grid-area: pictures;
   max-width: 280px;
   margin: 0 auto;
@@ -207,62 +204,5 @@
   @include desktop {
     align-self: end;
     margin-bottom: 10px;
-  }
-
-  img {
-    display: block;
-  }
-
-  picture:first-of-type img {
-    clip-path: inset(0 calc(100% - var(--value, 0)) 0 0);
-  }
-
-  picture:last-of-type img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    clip-path: inset(0 0 0 var(--value, 0));
-  }
-}
-
-.example__comparator {
-  @include button;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--value);
-  margin: 0;
-  padding: 0;
-  color: #666666;
-  background-color: transparent;
-  transform: translateX(-50%);
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: #68b738;
-  }
-
-  &:active {
-    color: rgba(#5eaa2f, 0.6);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    background-color: currentColor;
-    border-radius: 2px;
-    transform: translateX(-50%);
-  }
-
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }

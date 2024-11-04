@@ -1,0 +1,12 @@
+<div class="comparator {{ className }}" style="--position: 50%">
+  {% for picture in pictures %}
+    {% include '../common/picture.twig' with picture|merge({ className: '' }) %}
+  {% endfor %}
+
+  <button class="comparator__button" type="button">
+    <span class="visually-hidden">Изменить соотношение</span>
+    <svg width="40" height="40" aria-hidden="true" focusable="false">
+      <use href="images/thumb.svg#thumb" />
+    </svg>
+  </button>
+</div>

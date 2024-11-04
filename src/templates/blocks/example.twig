@@ -17,17 +17,7 @@
         <dd class="example__expenses">{{ cost }} руб.</dd>
       </div>
     </dl>
-    <div class="example__pictures" style="--position: 50%">
-      {% for picture in pictures %}
-        {% include '../common/picture.twig' with picture %}
-      {% endfor %}
 
-      <button class="example__comparator" type="button">
-        <span class="visually-hidden">Изменить соотношение</span>
-        <svg width="40" height="40" aria-hidden="true" focusable="false">
-          <use href="images/thumb.svg#thumb" />
-        </svg>
-      </button>
-    </div>
+    {% include 'comparator.twig' with { className: 'example__comparator', pictures } %}
   </div>
 </section>
