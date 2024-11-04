@@ -131,18 +131,20 @@
 }
 
 @mixin background-image($name, $index: 1) {
-  background-image: url("/images/#{$name}@#{$index}x.webp");
+  @include mobile {
+    background-image: url("/images/#{$name}@#{$index}x.webp");
+  }
 
-  @include tablet-desktop() {
+  @include tablet-desktop {
     background-image: url("/images/#{$name}-tablet@#{$index}x.webp");
   }
 
-  @include desktop() {
+  @include desktop {
     background-image: url("/images/#{$name}-desktop@#{$index}x.webp");
   }
 
   @if $index == 1 {
-    @include retina() {
+    @include retina {
       @include background-image($name, $index: 2);
     }
   }
